@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AitiMart</title>
+    <style>
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #000000, #000000);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            border: solid rgb(255, 255, 255);
+            border-radius: 20px;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: white;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            color: #000000;
+            list-style: none;
+            padding: 10px 0;
+            min-width: 180px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1000;
+        }
+
+        .dropdown li {
+            padding: 8px 20px;
+        }
+
+        .dropdown li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown li a:hover {
+            color: #000000;
+        }
+
+        .menu li:hover .dropdown {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background: #959595;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 250px;
+                padding: 20px 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+            }
+
+            .menu li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu.show {
+                display: flex;
+                animation: slideIn 0.3s ease-in-out;
+            }
+
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #000000;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+
+        .contact {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f0f8f5;
+            border-left: 5px solid #4CAF50;
+            border-radius: 4px;
+        }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AitiMart</div>
+        <nav>
+            <span class="menu-toggle">&#9776;</span>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Personal Training</a></li>
+                        <li><a href="#">Group Classes</a></li>
+                        <li><a href="#">Nutrition Plans</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to AitiMart! We specialize in innovative investment strategies to help you achieve your financial goals. Our team is dedicated to making your investments work harder and smarter for you.</p>
+
+        <h2>What We Do</h2>
+        <p>At AitiMart, we identify the most promising market opportunities and build tailored investment portfolios. With our expertise in market research and risk assessment, we ensure that every decision aligns with maximizing returns for our investors.</p>
+
+        <h2>How We Invest</h2>
+        <p>Your trust is our priority. Our investment approach combines traditional strategies with modern analytics, ensuring transparency, growth, and sustainability. We carefully analyze trends, conduct thorough risk assessments, and diversify portfolios to secure long-term success.</p>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p><strong>Phone:</strong> 9226641385</p>
+            <p><strong>Email:</strong> <a href="mailto:AitiMart@gmail.com">AitiMart@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 AitiMart. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
